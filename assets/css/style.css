@@ -1,3 +1,9 @@
 body {
    background: #fff;
 }
+
+.bg {
+   position: fixed;
+   width: max-content;
+   height: max-content;
+}
