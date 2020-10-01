@@ -1,2 +1,2 @@
 # notes
-www.vanja-san.github.io
+https://vanja-san.github.io/
