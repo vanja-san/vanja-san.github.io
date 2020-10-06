@@ -1,0 +1,6 @@
+@import url('./nanoreset.min.css');
+
+#page-loader span {
+  font-size: 100px;
+  color: rgb(207, 69, 69);
+}
