@@ -4,39 +4,117 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WMYL</title>
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/fullpage.min.css" />
+    <link rel="stylesheet" href="./assets/css/pageloader.css" />
+    <!-- CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.materialdesignicons.com/5.6.55/css/materialdesignicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css"
+    />
+    <!-- END CSS-->
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
     <!--Loading-->
-    <div id="page-loader">
-      <div>
-        <div class="icon ion-spin">
-          <span class="material-icons-round">
-            favorite
-          </span>
-        </div>
-        <!-- <p>загруза</p> -->
-      </div>
-    </div>
+    <!-- <div class='page-loader'> -->
+    <!-- <div> -->
+    <!-- <i class='icon ion-spin'></i> -->
+    <!-- <p>загрузка</p> -->
+    <!-- </div> -->
+    <!-- </div> -->
     <!--END Loading-->
     <!--Navigation-->
-    <heade class="nav logo">
-      <a href="#" class="nav-logo">
-        <span class="logo"></span>
-        <span class="text"></span>
-      </a>
-    </heade>
-    <!--END Navigation-->
+    <header class="nav-top logo">
+      <!-- <a class="nav-brand nav-center" href="#"> -->
+      <!-- <span class="logo"><p class="material-icons-round">home</p></a></span> -->
+      <!-- <span class="text"></span> -->
+      <!-- </a> -->
+    </header>
+    <nav class="nav-side quick-link count-4 nav-left">
+      <ul id="qmenu">
+        <li class="nav-item active" data-menuanchor="home">
+          <a href="#homePage"><i data-feather="home"></i></a>
+        </li>
+        <li class="nav-item" data-menuanchor="anime">
+          <a href="#animePage"><i data-feather="droplet"></i></a>
+        </li>
+        <li class="nav-item" data-menuanchor="series">
+          <a href="#seriesPage"><i data-feather="video"></i></a>
+        </li>
+      </ul>
+    </nav>
+    <div id="fullpage" class="main-page fullpage fullpage-wrapper">
+      <div
+        id="section1"
+        class="section active section-home"
+        data-anchor="homePage"
+      >
+        <img src="./assets/img/bg3.jpg" alt="bg-home" />
+        <div class="h-text">
+          <h1>welcome</h1>
+          <p>first page</p>
+        </div>
+      </div>
+      <div id="section2" class="section section-anime" data-anchor="animePage">
+        <img src="./assets/img/animeBG1.jpg" alt="bg-home" />
+      </div>
+      <div
+        id="section3"
+        class="section section-series"
+        data-anchor="seriesPage"
+      >
+        <img src="./assets/img/seriesBG.png" alt="bg-home" />
+      </div>
+    </div>
+    <!--Navigation END-->
     <!--Scripts-->
-    <script src="./assets/js/jquery-3.5.1.min.js"></script>
+    <script src="./assets/js/fullpage.min.js"></script>
+    <!-- CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fz6m/fakeloader2.js@1.1/dist/fakeloader2.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
-    <!--END Scripts-->
+    <!-- CDN END -->
+    <script type="text/javascript">
+      //fullPage
+      $(document).ready(function () {
+        $("#fullpage").fullpage({
+          //options here
+          autoScrolling: true,
+          scrollHorizontally: true,
+        });
+
+        //methods
+        $.fn.fullpage.setAllowScrolling(false);
+      });
+
+      new fullpage("#fullpage", {
+        anchors: ["homePage", "animePage", "seriesPage"],
+      });
+      //END fullPage
+      feather.replace(); // Feather Icons
+    </script>
+    <!--Scripts END-->
   </body>
 </html>

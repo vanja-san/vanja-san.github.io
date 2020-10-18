@@ -1,6 +1,46 @@
 @import url('./nanoreset.min.css');
 
-#page-loader span {
-  font-size: 100px;
-  color: rgb(207, 69, 69);
+nav {
+  position: absolute;
+  float: left;
+  top: 25rem;
+  left: 50px;
+  z-index: 9999;
+}
+
+.nav-item a {
+  position: relative;
+  display: block;
+  border: rgb(255, 255, 255) solid 2px;
+  border-radius: 2px;
+  padding: 15px;
+  margin: 10px;
+  color: rgb(255, 255, 255);
+  backdrop-filter: blur(5px);
+}
+
+.h-text {
+  position: absolute;
+  flex: none;
+  top: 60%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.h-text h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 200px;
+  color: #fff;
+  text-shadow: rgba(0, 0, 0, 0.400) 15px 15px;
+}
+
+.h-text p {
+  font-weight: 250;
+  font-size: 70px;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: rgba(0, 0, 0, 0.400) 5px 5px;
+  text-align: center;
 }
