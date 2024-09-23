@@ -1,127 +1,90 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><home></title>
-  <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400;500;600;700&family=Courier+Prime:wght@400;700&family=Fleur+De+Leah&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    @font-face {
-      font-family: 'Segoe UI Var';
-      src: url('https://vanja-san.github.io/yarui/src/fonts/SegoeUI-VF.ttf');
-    }
-    *, ::after, ::before {
-      box-sizing: border-box;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      text-decoration: none;
-    }
-
-    body {
-      background: #272727;
-      height: 100vh;
-      overflow: hidden;
-    }
-    .container {
-      display: grid;
-      grid-template-rows: 70px 1fr 1fr;
-      background: #d3d3d3;
-      min-height: 100%;
-      width: 1187px;
-      margin: 20px auto;
-      border-radius: 8px;
-    }
-
-    .navbar {
-      position: relative;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      align-items: center;
-      padding: .5rem 1.5rem;
-    }
-    .nav-container {
-      display: flex;
-    }
-    .link {
-      padding: 0 .5rem;
-    }
-
-    .logo {
-      color: #272727;
-      font: bold 2.15rem 'Segoe UI Var';
-      padding-bottom: 1rem;
-      line-height: 2rem;
-      white-space: nowrap;
-    }
-
-    .link a {
-      color: #272727;
-      font: 600 .955rem 'Segoe UI Var';
-      opacity: 50%;
-      text-transform: uppercase;
-    }
-    .link a:hover {
-      opacity: 100%;
-    }
-    button {
-      background: transparent;
-      border: 0;
-    }
-
-    .content {
-      margin: 0 auto;
-      padding: 10rem 0;
-      text-align: center;
-      width: 900px;
-    }
-    .quote-text {
-      color: #272727;
-      font: small-caps bold 3.7555rem 'Caveat', sans-serif;
-      line-height: 1;
-      margin-top: 8rem;
-    }
-    .quote-text::before {
-      position: absolute;
-      content: ' " ';
-      color: #272727;
-      font: bold 20rem 'Fleur De Leah';
-      transform: rotate(180deg);
-      top: 0;
-      margin-left: 420px;
-      opacity: 50%;
-    }
-    .quote-author {
-      color: #272727;
-      font: bold 3.2555rem 'Caveat';
-      text-align: right;
-      opacity: 50%;
-      margin-top: 40px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header class="navbar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><home></title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400;500;600;700&family=Courier+Prime:wght@400;700&family=Fleur+De+Leah&family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display+Cyrillic:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Cyrillic:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Federo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
       <a class="logo" href="#">vanjaSan</a>
-      <div class="nav-container">
-        <div class="link home"><a href="#"><i class="ti ti-home"></i></a></div>
-        <div class="link pt"><a href="#prototype">prototype</a></div>
-        <div class="link gh"><a href="#github">github</a></div>
-        <button class="link toggle-theme" onclick="toggleTheme()"><a href="#toggle-theme">theme</a></button>
-      </div>
-    </header>
-    <main class="content">
-      <p class="quote-text">No matter how many mistakes you make or how slow you progress, you are still way ahead of everyone who isn't trying.</p>
-      <p class="quote-author">— Tony Robbins</p>
-    </main>
+      <ul>
+        <li><a href="#prototype">userStyles</a></li>
+        <li><a href="#github">gitHub</a></li>
+        <li>
+          <button class="toggle-theme" onclick="toggleTheme()">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <blockquote>
+      <p class="quote-text" data-lang="ru">
+        Независимо от количества ошибок, которые вы делаете, или от того,
+        насколько медленно вы прогрессируете, вы всё равно опережаете всех, кто
+        не пытается.
+      </p>
+      <p class="quote-author" data-lang="ru">— Тони Роббинс</p>
+    </blockquote>
     <footer class="empty footer"></footer>
-  </div>
-</body>
+    <script src="assets/script.js"></script>
+  </body>
 </html>

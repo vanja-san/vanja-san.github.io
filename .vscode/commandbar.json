@@ -1,0 +1,15 @@
+{
+  "skipTerminateQuickPick": true,
+  "skipSwitchToOutput": false,
+  "skipErrorMessage": true,
+  "commands": [
+    {
+      "text": "$(sync) stylus > css",
+      "tooltip": "Компиляция .styl в .css после сохранения",
+      "commandType": "exec",
+      "command": "stylus -w src/styles.styl -o assets/styles.css",
+      "alignment": "left",
+      "skipTerminateQuickPick": false
+    }
+  ]
+}
