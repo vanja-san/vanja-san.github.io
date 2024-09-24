@@ -34,6 +34,11 @@ body
   color #212121
   max-width 1250px
   margin 0 auto
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
+  height 100vh
 
   &.dark-theme
     background #212121
@@ -44,42 +49,36 @@ body
     color #333
 
 nav
-  padding .5rem 3rem
   display flex
-  justify-content flex-start
+  justify-content space-between
   align-items center
+  padding .5rem 3rem
+  width 60vw
+  margin 0 auto
 
   .logo
     font bold 20pt Dancing Script, sans-serif
-    margin-left 0
     margin-right 20px
+    flex 0 0 auto
 
   i
     font-size 18pt
 
   ul
-    flex-grow 1
     list-style none
-    margin 0
-    padding 0
     display flex
+    flex-wrap wrap
     justify-content flex-end
 
   li
-    margin-right 10px
-    display flex
-    justify-content center
-    align-items center
-
     &:last-child
-        margin-right 0
+      margin-right 0
 
   a
+    display block
+    padding 10px
     color inherit
     text-decoration none
-    display flex
-    align-items center
-    height 100%
 
     &:hover
       color #ccc
@@ -102,35 +101,22 @@ nav
         &:hover
           color #ecd869
 
-i::before
-  font-variant-numeric unset
+//i::before
+//  font-variant-numeric unset
 
 blockquote
-  font 700 24pt Playfair Display, serif
+  font bold 36pt Playfair Display, serif
   text-align center
-  margin 0 auto
+  margin auto
   padding 1rem
-  display flex
-  flex-direction column
-  justify-content center
-  align-items center
-  width 50%
-  height 100vh
-  position absolute
-  top 50%
-  left 50%
-  transform translate(-50%, -50%)
+  width 75%
   color inherit
 
   &.dark-theme
-    color #fff
+    color #f0f0f0
 
   &.light-theme
-    color #333
-
-  .quote-text
-    &.light-theme
-      color #333
+    color #212121
 
   .quote-author
     font-size 1.5rem
@@ -164,7 +150,7 @@ footer
   bottom 0
   left 0
   width 100%
+  padding 1rem
   background transparent
-  padding .1rem
   text-align center
   color #fff

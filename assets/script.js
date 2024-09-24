@@ -1,5 +1,5 @@
-let theme = "light"; // initial theme
-let toggleButton = document.querySelector(".toggle-theme"); // define toggleButton
+let theme = "light";
+let toggleButton = document.querySelector(".toggle-theme");
 
 function toggleTheme() {
   if (theme === "light") {
@@ -20,12 +20,12 @@ function toggleTheme() {
 const translations = {
   ru: {
     quoteText:
-      "Независимо от количества ошибок, которые вы делаете, или от того, насколько медленно вы прогрессируете, вы всё равно опережаете всех, кто не пытается.",
+      "Сколько бы ошибок вы ни совершали и как бы медленно ни продвигались вперед, вы всё равно намного опережаете всех, кто не пытается.",
     quoteAuthor: "— Тони Роббинс",
   },
   en: {
     quoteText:
-      "Regardless of the number of mistakes you make, or how slow you progress, you still outperform everyone who doesn't try.",
+      "No matter how many mistakes you make or how slow you progress, you are still way ahead of everyone who isn’t trying.",
     quoteAuthor: "— Tony Robbins",
   },
 };
@@ -38,25 +38,24 @@ function updateLanguage() {
   const quoteAuthorElement = document.querySelector(".quote-author");
 
   quoteTextElement.classList.remove("animate-in");
-  quoteAuthorElement.classList.remove("animate-in"); // добавляем это
+  quoteAuthorElement.classList.remove("animate-in");
 
   quoteTextElement.classList.add("animate-out");
-  quoteAuthorElement.classList.add("animate-out"); // добавляем это
+  quoteAuthorElement.classList.add("animate-out");
 
   setTimeout(() => {
     quoteTextElement.textContent = translations[currentLang].quoteText;
     quoteAuthorElement.textContent = translations[currentLang].quoteAuthor;
 
     quoteTextElement.classList.remove("animate-out");
-    quoteAuthorElement.classList.remove("animate-out"); // добавляем это
+    quoteAuthorElement.classList.remove("animate-out");
 
     quoteTextElement.classList.add("animate-in");
-    quoteAuthorElement.classList.add("animate-in"); // добавляем это
-  }, 1500); // increased timeout to 750ms
+    quoteAuthorElement.classList.add("animate-in");
+  }, 1500);
 }
 
-// Switch language every 5 seconds
 setInterval(() => {
   currentLang = langs[(langs.indexOf(currentLang) + 1) % langs.length];
   updateLanguage();
-}, 5000);
+}, 8000);
