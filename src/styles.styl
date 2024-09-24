@@ -1,6 +1,7 @@
 @font-face
-  font-family 'Segoe UI Var'
-  src url('https://vanja-san.github.io/yarui/src/fonts/SegoeUI-VF.ttf')
+  font-family 'Tabler Icons'
+  src url('https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.woff2') format('woff2')
+  src url('https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.woff') format('woff')
 
 *, ::after, ::before
   box-sizing border-box
@@ -10,17 +11,32 @@
   padding 0
   text-decoration none
 
+@media (max-width: 768px)
+  nav
+    ul
+      li
+        a
+          font-size 16pt
+          padding 10px
+
+@media (max-width: 480px)
+  nav
+    ul
+      li
+        a
+          font-size 14pt
+          padding 5px
+
 body
   background #f0f0f0
   height 100vh
   overflow hidden
-  font-family 'Segoe UI Var', sans-serif
   color #212121
   max-width 1250px
   margin 0 auto
 
   &.dark-theme
-    background #444
+    background #212121
     color #fff
 
   &.light-theme
@@ -30,26 +46,40 @@ body
 nav
   padding .5rem 3rem
   display flex
-  justify-content space-between
+  justify-content flex-start
   align-items center
 
   .logo
-    font bold 24pt Caveat, sans-serif
+    font bold 20pt Dancing Script, sans-serif
+    margin-left 0
+    margin-right 20px
+
+  i
+    font-size 18pt
 
   ul
+    flex-grow 1
     list-style none
     margin 0
     padding 0
     display flex
-    align-items center
+    justify-content flex-end
 
   li
-    margin-right 20px
+    margin-right 10px
+    display flex
+    justify-content center
+    align-items center
+
+    &:last-child
+        margin-right 0
 
   a
-    font bold 20pt Caveat, sans-serif
     color inherit
     text-decoration none
+    display flex
+    align-items center
+    height 100%
 
     &:hover
       color #ccc
@@ -63,17 +93,17 @@ nav
 
     i
       color inherit
-      font-size 1.5rem
 
-      &.fa-moon
-        color #212121
-        &:hover
-          color #6981ec
+      &.ti-moon:hover
+        color #6981ec
 
-      &.fa-sun
-        color #fff
+      &.ti-sun
+        color #f0f0f0
         &:hover
           color #ecd869
+
+i::before
+  font-variant-numeric unset
 
 blockquote
   font 700 24pt Playfair Display, serif
@@ -99,7 +129,6 @@ blockquote
     color #333
 
   .quote-text
-    //transition opacity 0.5s
     &.light-theme
       color #333
 
@@ -107,7 +136,6 @@ blockquote
     font-size 1.5rem
     color #666
     margin-top 0.5rem
-    //transition opacity 0.5s
 
     &.dark-theme
       color #aaa

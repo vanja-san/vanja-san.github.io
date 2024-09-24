@@ -1,6 +1,7 @@
 @font-face {
-  font-family: 'Segoe UI Var';
-  src: url("https://vanja-san.github.io/yarui/src/fonts/SegoeUI-VF.ttf");
+  font-family: 'Tabler Icons';
+  src: url("https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.woff2") format('woff2');
+  src: url("https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.woff") format('woff');
 }
 *,
 ::after,
@@ -12,17 +13,28 @@
   padding: 0;
   text-decoration: none;
 }
+@media (max-width: 768px) {
+  nav ul li a {
+    font-size: 16pt;
+    padding: 10px;
+  }
+}
+@media (max-width: 480px) {
+  nav ul li a {
+    font-size: 14pt;
+    padding: 5px;
+  }
+}
 body {
   background: #f0f0f0;
   height: 100vh;
   overflow: hidden;
-  font-family: 'Segoe UI Var', sans-serif;
   color: #212121;
   max-width: 1250px;
   margin: 0 auto;
 }
 body.dark-theme {
-  background: #444;
+  background: #212121;
   color: #fff;
 }
 body.light-theme {
@@ -32,26 +44,40 @@ body.light-theme {
 nav {
   padding: 0.5rem 3rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 nav .logo {
-  font: bold 24pt Caveat, sans-serif;
+  font: bold 20pt Dancing Script, sans-serif;
+  margin-left: 0;
+  margin-right: 20px;
+}
+nav i {
+  font-size: 18pt;
 }
 nav ul {
+  flex-grow: 1;
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
 }
 nav li {
-  margin-right: 20px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav li:last-child {
+  margin-right: 0;
 }
 nav a {
-  font: bold 20pt Caveat, sans-serif;
   color: inherit;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 nav a:hover {
   color: #ccc;
@@ -65,19 +91,18 @@ nav .toggle-theme {
 }
 nav .toggle-theme i {
   color: inherit;
-  font-size: 1.5rem;
 }
-nav .toggle-theme i.fa-moon {
-  color: #212121;
-}
-nav .toggle-theme i.fa-moon:hover {
+nav .toggle-theme i.ti-moon:hover {
   color: #6981ec;
 }
-nav .toggle-theme i.fa-sun {
-  color: #fff;
+nav .toggle-theme i.ti-sun {
+  color: #f0f0f0;
 }
-nav .toggle-theme i.fa-sun:hover {
+nav .toggle-theme i.ti-sun:hover {
   color: #ecd869;
+}
+i::before {
+  font-variant-numeric: unset;
 }
 blockquote {
   font: 700 24pt Playfair Display, serif;
