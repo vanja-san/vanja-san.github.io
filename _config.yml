@@ -1,2 +1,12 @@
+title: Home
+description: ...
+baseurl: "" # the subpath of your site, e.g. /blog
+url: ""
+
 markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
 pages_dir: pages
