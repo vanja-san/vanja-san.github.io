@@ -44,3 +44,8 @@ page '/*.txt', layout: false
 #   activate :minify_css
 #   activate :minify_javascript, compressor: Terser.new
 # end
+
+activate :gh_pages do |gh_pages|
+  gh_pages.remote = 'git@github.com:an_absolute/github_remote_name.git'
+  gh_pages.branch = 'master'
+end
