@@ -20,7 +20,7 @@ jobs:
           bundle exec jekyll build
           bundle exec jekyll deploy
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_BRANCH: gh-pages
           JEKYLL_ENV: production
