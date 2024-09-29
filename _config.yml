@@ -8,6 +8,7 @@ author: vanja-san
 baseurl: /
 url: vanja-san.github.io
 github_username: vanja-san
+default_layout: default
 
 permalink: pretty
 pages_dir: pages
