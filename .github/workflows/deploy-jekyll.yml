@@ -24,8 +24,9 @@ jobs:
           JEKYLL_ENV: production
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PATH: $PATH:/home/runner/.local/share/gem/ruby/3.0.0/bin
+          BUNDLE_GEMFILE: $GITHUB_WORKSPACE/Gemfile
         run: |
-          bundle exec jekyll build
+          /home/runner/.local/share/gem/ruby/3.0.0/bin/bundle exec jekyll build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
