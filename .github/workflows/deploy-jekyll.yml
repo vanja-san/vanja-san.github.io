@@ -14,7 +14,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          gem install bundler
+          gem install bundler --user-install
+          bundle config set path 'vendor/bundle'
           bundle install
 
       - name: Build
