@@ -17,7 +17,7 @@ jobs:
           gem install bundler --user-install
           export PATH=$PATH:/home/runner/.local/share/gem/ruby/3.0.0/bin
           bundle config set path 'vendor/bundle'
-          bundle install
+          bundle install --jobs 4 --retry 3
 
       - name: Build
         env:
@@ -26,7 +26,7 @@ jobs:
           PATH: $PATH:/home/runner/.local/share/gem/ruby/3.0.0/bin
           BUNDLE_GEMFILE: $GITHUB_WORKSPACE/Gemfile
         run: |
-          /home/runner/.local/share/gem/ruby/3.0.0/bin/bundle exec jekyll build
+          /home/runner/.local/share/gem/ruby/3.0.0/bin/bundle exec jekyll build --config _config.yml
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
