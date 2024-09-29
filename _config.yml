@@ -13,10 +13,6 @@ assets:
   stylus:
     enabled: true
 
-github:
-  assets:
-    css: true
-
 plugins: [jekyll-paginate, jekyll-feed]
 #sass:
 #  sass_dir: _sass
