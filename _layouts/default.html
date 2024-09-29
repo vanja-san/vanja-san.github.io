@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/1.35.0/iconfont/tabler-icons.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="logo"><a href="/">[ vs ]</a></div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li>
+          <a href="{{ '/userstyles/' | relative_url }}">UserStyles</a>
+        </li>
+        <li>
+          <a href="{{ '/preview/' | relative_url }}">Preview</a>
+        </li>
+        <li>
+          <button class="theme-toggle-btn">
+            <span class="ti ti-moon"></span>
+            <span class="ti ti-sun"></span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <main>{{ content }}</main>
+    {% include footer.html %}
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "commands": [
+    //{
+    //  "text": "$(play-circle) Watch Stylus",
+    //  "tooltip": "Compile Stylus to CSS",
+    //  "color": "red",
+    //  "commandType": "exec",
+    //  "command": "stylus -w stylus/main.styl --out assets/css/main.css",
+    //  "alignment": "left"
+    //},
+    {
+      "text": "$(live-share) Jekyll Serve",
+      "tooltip": "Start Jekyll server",
+      "color": "red",
+      "commandType": "exec",
+      "command": "bundle exec jekyll clean && bundle exec jekyll serve --livereload",
+      "alignment": "left"
+    },
+    {
+      "text": "$(package) Jekyll Build",
+      "tooltip": "Build Jekyll site",
+      "color": "red",
+      "commandType": "exec",
+      "command": "bundle exec jekyll build",
+      "alignment": "left"
+    }
+  ]
+}

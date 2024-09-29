@@ -1,0 +1,47 @@
+nav
+  width 60%
+  display flex
+  align-items center
+  justify-content space-between
+  margin 0 auto
+  padding 1rem
+
+  .logo a
+    font 900 18pt Playfair Display
+    &:hover
+      color $txt-color-h
+
+  ul
+    display flex
+    align-items center
+    list-style none
+
+  li
+    margin-left 20px
+
+    a
+      font bold 16pt Playfair Display
+      &:hover
+        color $txt-color-h
+
+  .theme-toggle-btn
+    background none
+    border none
+    margin-top .2rem
+    cursor pointer
+
+    &:hover
+      .ti-moon
+        color #3498db
+      .ti-sun
+        color #f1c40f
+
+    .ti
+      display block
+      font-size 20pt
+
+    .ti-moon
+      color #212121
+
+    .ti-sun
+      color #f0f0f0

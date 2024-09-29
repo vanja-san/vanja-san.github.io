@@ -1,17 +1,28 @@
 title: home
-description: " "
+description: false
 author: vanja-san
-
-baseurl: "/"
+baseurl: /
 url: vanja-san.github.io
 github_username: vanja-san
 
+permalink: pretty
+pages_dir: pages
 highlighter: rouge
-# theme: minima
-plugins:
-  - jekyll-feed
+
+assets:
+  stylus:
+    enabled: true
+
+github:
+  assets:
+    css: true
+
+plugins: [jekyll-paginate, jekyll-feed]
+#sass:
+#  sass_dir: _sass
+#  style: compressed
 # Exclude from processing.
-# exclude:
+# exclude
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/

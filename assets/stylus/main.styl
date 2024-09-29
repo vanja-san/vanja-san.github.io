@@ -1,0 +1,50 @@
+@import "index.styl"
+
+/* Светлая тема */
+body
+  display flex
+  flex-direction column
+  min-height 100vh
+
+h1
+  font bold 26pt Roboto, sans-serif
+
+main
+  display flex
+  flex-direction column
+  align-items center
+  padding 20px
+
+  &.full-width
+    max-width 100%
+
+  &.centered
+    justify-content center
+
+  .content
+    max-width 800px
+    margin 0 auto
+    padding 20px
+
+  .section
+    margin-bottom 20px
+
+    &.first
+      margin-top 0
+
+    &.last
+      margin-bottom 0
+
+  .copyright
+    font-size 12px
+
+  .social-links
+    display flex
+    justify-content space-between
+    align-items center
+
+    a
+      margin-right 10px
+
+      &:last-child
+        margin-right 0

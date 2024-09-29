@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+nav {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1rem;
+}
+nav .logo a {
+  font: 900 18pt Playfair Display;
+}
+nav .logo a:hover {
+  color: #e68230;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+nav li {
+  margin-left: 20px;
+}
+nav li a {
+  font: bold 16pt Playfair Display;
+}
+nav li a:hover {
+  color: #e68230;
+}
+nav .theme-toggle-btn {
+  background: none;
+  border: none;
+  margin-top: 0.2rem;
+  cursor: pointer;
+}
+nav .theme-toggle-btn:hover .ti-moon {
+  color: #3498db;
+}
+nav .theme-toggle-btn:hover .ti-sun {
+  color: #f1c40f;
+}
+nav .theme-toggle-btn .ti {
+  display: block;
+  font-size: 20pt;
+}
+nav .theme-toggle-btn .ti-moon {
+  color: #212121;
+}
+nav .theme-toggle-btn .ti-sun {
+  color: #f0f0f0;
+}
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14pt;
+}
+.light-theme {
+  background-color: #f0f0f0;
+  color: #212121;
+}
+.light-theme a {
+  color: #212121;
+}
+.dark-theme {
+  background-color: #212121;
+  color: #f0f0f0;
+}
+.dark-theme a {
+  color: #f0f0f0;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: auto;
+  text-align: center;
+}
+footer .copyright {
+  font-size: 12px;
+}
+footer .social-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .social-links a {
+  margin-right: 10px;
+}
+footer .social-links a:last-child {
+  margin-right: 0;
+}
+/* Светлая тема */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+h1 {
+  font: bold 26pt Roboto, sans-serif;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+main.full-width {
+  max-width: 100%;
+}
+main.centered {
+  justify-content: center;
+}
+main .content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+main .section {
+  margin-bottom: 20px;
+}
+main .section.first {
+  margin-top: 0;
+}
+main .section.last {
+  margin-bottom: 0;
+}
+main .copyright {
+  font-size: 12px;
+}
+main .social-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .social-links a {
+  margin-right: 10px;
+}
+main .social-links a:last-child {
+  margin-right: 0;
+}
