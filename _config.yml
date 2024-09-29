@@ -13,9 +13,17 @@ permalink: pretty
 pages_dir: pages
 highlighter: rouge
 
+gh-pages:
+  branch: gh-pages
+  repo: https://github.com/vanja-san/vanja-san.github.io.git
+  ignore:
+    - assets/stylus
+
 assets:
   stylus:
     enabled: true
+    compile: css
+    output: assets/css
 
 plugins: [jekyll-paginate, jekyll-feed]
 #sass:
