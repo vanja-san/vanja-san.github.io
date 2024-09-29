@@ -21,10 +21,11 @@ gh-pages:
     - assets/stylus
 
 assets:
+  stylus: true
   stylus:
-    enabled: true
     compile: css
     output: assets/css
+    main: true
 
 plugins: [jekyll-paginate, jekyll-feed]
 #sass:
