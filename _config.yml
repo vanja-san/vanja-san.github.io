@@ -1,6 +1,10 @@
+github:
+  repository: vanja-san/vanja-san.github.io
+
 title: home
 description: false
 author: vanja-san
+
 baseurl: /
 url: vanja-san.github.io
 github_username: vanja-san
