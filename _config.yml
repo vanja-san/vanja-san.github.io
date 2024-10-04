@@ -1,33 +1,16 @@
-github:
-  repository: vanja-san/vanja-san.github.io
-
-title: home
-description: false
+title: Home
+description: Home
 author: vanja-san
 
 baseurl: /
 url: vanja-san.github.io
 github_username: vanja-san
-default_layout: default
 
 permalink: pretty
 pages_dir: pages
 highlighter: rouge
 
-gh-pages:
-  branch: gh-pages
-  repo: https://github.com/vanja-san/vanja-san.github.io.git
-  ignore:
-    - assets/stylus
-
-assets:
-  stylus: true
-  stylus:
-    compile: css
-    output: assets/css
-    main: true
-
-plugins: [jekyll-paginate, jekyll-feed]
+plugins: []
 #sass:
 #  sass_dir: _sass
 #  style: compressed

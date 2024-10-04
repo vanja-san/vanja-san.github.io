@@ -1,3 +1,0 @@
-stylus:
-  compile: true
-  output: assets/css
