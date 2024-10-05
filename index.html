@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vanja-san</title>
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <title>Мой сайт</title>
+  <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
 <body>
-  <div class="container">
+  <header>
     <nav>
-      <a href="/">logo</a>
-      <div class="nav-items">
-        <div class="nav-item"><a href="/">Home</a></div>
-        <div class="nav-item"><a href="/pages/userstyles.html">Styles</a></div>
-        <div class="nav-item"><a href="/pages/about.html">About</a></div>
-      </div>
+      <div class="logo">Логотип</div>
+      <ul class="menu">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Стили</a></li>
+        <li><a href="#" id="theme-toggle">Сменить тему</a></li>
+      </ul>
     </nav>
-    <main class="quote">
-      <blockquote class="q-text">
-        Exercitation dolore ex sunt do incididunt sit non nulla consequat exercitation. Ad magna ea pariatur ex sint in
-        incididunt excepteur laborum dolor eu. Sit enim anim anim in cupidatat ipsum nulla sint tempor proident.
-      </blockquote>
-      <p name="quote-author" id="q-author">- Author</p>
-    </main>
-  </div>
+  </header>
+  <main>
+    <div class="quote-container">
+      <blockquote class="quote">«Цитата»</blockquote>
+      <p class="author">- Автор</p>
+    </div>
+  </main>
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
