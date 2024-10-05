@@ -4,27 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мой сайт</title>
+  <title>Минималистичный Сайт</title>
+  <link id="theme-stylesheet" rel="stylesheet" href="./assets/css/light.css">
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
 <body>
   <header>
+    <div class="logo">Логотип</div>
     <nav>
-      <div class="logo">Логотип</div>
-      <ul class="menu">
+      <ul>
         <li><a href="#">Главная</a></li>
-        <li><a href="#">Стили</a></li>
-        <li><a href="#" id="theme-toggle">Сменить тему</a></li>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#" id="toggle-theme">Сменить тему</a></li>
       </ul>
     </nav>
   </header>
-  <main>
-    <div class="quote-container">
-      <blockquote class="quote">«Цитата»</blockquote>
-      <p class="author">- Автор</p>
-    </div>
-  </main>
+  <div class="container">
+    <main>
+      <blockquote class="quote">
+        Жизнь - это то, что происходит, пока вы заняты другими планами.
+      </blockquote>
+      <cite>- Джон Леннон</cite>
+    </main>
+  </div>
+  <footer>
+    <p>&copy; <span id="current-year"></span> Все права защищены.</p>
+  </footer>
   <script src="./assets/js/script.js"></script>
 </body>
 

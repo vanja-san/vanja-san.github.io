@@ -1,123 +1,55 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f7f7f7;
-    overflow-y: hidden;
-    width: 60vw;
+    display: flex;
+    flex-direction: column; /* Вертикальное выравнивание */
+    min-height: 100vh; /* Минимальная высота на всю видимую область */
+    margin: 0;
+    width: 60%;
     margin: 0 auto;
 }
 
 header {
-    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px;
 }
 
-.logo {
-    font-size: 18px;
-    font-weight: bold;
-    margin-right: 20px;
-}
-
-.menu {
-    list-style: none;
+.container {
+    flex: 1; /* Позволяет контейнеру занимать все доступное пространство */
+    width: 60%; /* Установим ширину на 60% */
+    margin: 0 auto; /* Центрируем контейнер */
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center; /* Центрируем по вертикали */
+    align-items: center; /* Центрируем по горизонтали */
+}
+
+nav ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
-.menu li {
-    margin-right: 20px;
-    padding: 10px;
-    font-size: 16px;
-}
-
-.menu a {
-    text-decoration: none;
-  color: #212121;
-  transition: background-color 0.2s ease;
-}
-
-.menu a:hover {
-    color: #666;
-}
-
-#theme-toggle {
-    font-size: 16px;
-    cursor: pointer;
+nav li {
     margin-left: 20px;
 }
 
-main {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+nav a {
+    text-decoration: none;
+    padding: 10px;
 }
 
-.quote-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
+/* Стили для цитаты */
 .quote {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: center; /* Центрируем текст */
+    font-style: italic; /* Курсив */
+    margin: 40px auto; /* Добавим отступ сверху и снизу */
+    font-size: 1.5em; /* Увеличим размер шрифта */
 }
 
-.quote::before {
-    content: '"';
-    font-size: 36px;
-    line-height: 0.8;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-.quote::after {
-    content: '"';
-    font-size: 36px;
-    line-height: 0.8;
-    vertical-align: middle;
-    margin-left: 10px;
-}
-
-.author {
-    font-size: 18px;
-    font-weight: normal;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.dark-mode {
-    background-color: #212121;
-    color: #f0f0f0;
-}
-
-.dark-mode .menu a {
-    color: #f0f0f0;
-}
-
-.dark-mode .menu a:hover {
-    color: #cfcfcf;
-}
-
-.dark-mode .quote {
-    color: #f0f0f0;
-}
-
-.dark-mode .author {
-    color: #f0f0f0;
+/* Стили для футера */
+footer {
+    text-align: center; /* Центрируем текст футера */
+    padding: 10px; /* Подушка для футера */
 }

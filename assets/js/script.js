@@ -1,20 +1,29 @@
-const themeToggle = document.getElementById('theme-toggle');
+document.addEventListener('DOMContentLoaded', function () {
+  const button = document.getElementById('toggle-theme');
+  const themeStylesheet = document.getElementById('theme-stylesheet');
 
-// Get the current theme state from localStorage
-const currentTheme = localStorage.getItem('theme');
-
-// Set the initial theme state
-if (currentTheme === 'dark-mode') {
-  document.body.classList.add('dark-mode');
-}
-
-themeToggle.addEventListener('click', function () {
-  document.body.classList.toggle('dark-mode');
-
-  // Update the theme state in localStorage
-  if (document.body.classList.contains('dark-mode')) {
-    localStorage.setItem('theme', 'dark-mode');
+  // Проверка сохраненной темы в localStorage
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    themeStylesheet.setAttribute('href', savedTheme === 'dark' ? './assets/css/dark.css' : './assets/css/light.css');
+    document.body.classList.add(savedTheme);
   } else {
-    localStorage.removeItem('theme');
+    // Устанавливаем тему по умолчанию, если она не сохранена
+    themeStylesheet.setAttribute('href', './assets/css/light.css'); // Светлая тема по умолчанию
+    document.body.classList.add('light'); // Также можно добавить класс для настройки стилей
   }
+
+  button.addEventListener('click', function () {
+    if (themeStylesheet.getAttribute('href') === './assets/css/light.css') {
+      themeStylesheet.setAttribute('href', './assets/css/dark.css');
+      localStorage.setItem('theme', 'dark');
+      document.body.classList.remove('light');
+      document.body.classList.add('dark');
+    } else {
+      themeStylesheet.setAttribute('href', './assets/css/light.css');
+      localStorage.setItem('theme', 'light');
+      document.body.classList.remove('dark');
+      document.body.classList.add('light');
+    }
+  });
 });
