@@ -1,37 +1,158 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Минималистичный Сайт</title>
-  <link id="theme-stylesheet" rel="stylesheet" href="./assets/css/light.css">
-  <link rel="stylesheet" href="./assets/css/main.css">
+  <title>vanja-san</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      /* Тёмный фон */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .eye-container {
+      position: relative;
+      width: 160px;
+      height: 80px;
+      overflow: hidden;
+      border-radius: 100px / 50px;
+      box-shadow: 0 0 0 4px #444;
+      /* Обводка глаза */
+    }
+
+    .eye {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, #333, #222);
+      border-radius: 100px / 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .iris {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      background: radial-gradient(circle at center, #00eaff, #0077aa, #004466);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      transition: transform 0.1s;
+      box-shadow: 0 0 15px 1px #00a2ff8e;
+      /* Уменьшенный эффект свечения */
+    }
+
+    .pupil {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle at center, #000, #222);
+      border-radius: 50%;
+      transition: transform 0.1s;
+    }
+
+    .eyelid {
+      position: absolute;
+      width: 100%;
+      height: 60%;
+      transition: transform 0.2s ease-in-out;
+      z-index: 2;
+    }
+
+    .eyelid.top {
+      top: 0;
+      transform: translateY(-100%);
+      background: linear-gradient(to bottom, #2e2e2e, #1a1a1a);
+    }
+
+    .eyelid.bottom {
+      bottom: 0;
+      transform: translateY(100%);
+      background: linear-gradient(to top, #2e2e2e, #1a1a1a);
+    }
+  </style>
 </head>
 
 <body>
-  <header>
-    <div class="logo">Логотип</div>
-    <nav>
-      <ul>
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">О нас</a></li>
-        <li><a href="#" id="toggle-theme">Сменить тему</a></li>
-      </ul>
-    </nav>
-  </header>
-  <div class="container">
-    <main>
-      <blockquote class="quote">
-        Жизнь - это то, что происходит, пока вы заняты другими планами.
-      </blockquote>
-      <cite>- Джон Леннон</cite>
-    </main>
+  <div class="eye-container">
+    <div class="eye">
+      <div class="iris">
+        <div class="pupil"></div>
+      </div>
+      <div class="eyelid top"></div>
+      <div class="eyelid bottom"></div>
+    </div>
   </div>
-  <footer>
-    <p>&copy; <span id="current-year"></span> Все права защищены.</p>
-  </footer>
-  <script src="./assets/js/script.js"></script>
+  <script>
+    const eyeContainer = document.querySelector('.eye-container');
+    const iris = document.querySelector('.iris');
+    const pupil = document.querySelector('.pupil');
+    const topEyelid = document.querySelector('.eyelid.top');
+    const bottomEyelid = document.querySelector('.eyelid.bottom');
+
+    function moveIris(event) {
+      const rect = eyeContainer.getBoundingClientRect();
+      const eyeCenterX = rect.left + rect.width / 2;
+      const eyeCenterY = rect.top + rect.height / 2;
+
+      const maxIrisMove = 15; // Максимальное смещение радужки
+      const maxPupilMove = 20; // Максимальное смещение зрачка
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
+
+      const deltaX = mouseX - eyeCenterX;
+      const deltaY = mouseY - eyeCenterY;
+
+      const angle = Math.atan2(deltaY, deltaX);
+      const irisDistance = Math.min(maxIrisMove, Math.sqrt(deltaX * deltaX + deltaY * deltaY));
+      const pupilDistance = Math.min(maxPupilMove, Math.sqrt(deltaX * deltaX + deltaY * deltaY));
+
+      const irisX = Math.cos(angle) * irisDistance;
+      const irisY = Math.sin(angle) * irisDistance;
+      const pupilX = Math.cos(angle) * pupilDistance;
+      const pupilY = Math.sin(angle) * pupilDistance;
+
+      iris.style.transform = `translate(${irisX}px, ${irisY}px)`;
+      pupil.style.transform = `translate(${pupilX - irisX}px, ${pupilY - irisY}px)`;
+    }
+
+    document.addEventListener('mousemove', moveIris);
+
+    function blinkEye() {
+      topEyelid.style.transform = 'translateY(0)';
+      bottomEyelid.style.transform = 'translateY(0)';
+      setTimeout(() => {
+        topEyelid.style.transform = 'translateY(-100%)';
+        bottomEyelid.style.transform = 'translateY(100%)';
+      }, 200);
+    }
+
+    function randomBlink() {
+      const minTime = 1000; // Минимальное время между морганиями
+      const maxTime = 3000; // Максимальное время между морганиями
+      const time = Math.floor(Math.random() * (maxTime - minTime)) + minTime;
+      setTimeout(() => {
+        blinkEye();
+        randomBlink();
+      }, time);
+    }
+
+    randomBlink();
+  </script>
 </body>
 
 </html>
