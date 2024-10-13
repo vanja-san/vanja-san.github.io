@@ -1,53 +1,65 @@
-const mainTitleElement = document.getElementById('mainTitle');
-const todayIsElement = document.getElementById('todayIs');
-const dayOfWeekElement = document.getElementById('dayOfWeek');
-const monthElement = document.getElementById('month');
-const dayElement = document.getElementById('day');
-const yearElement = document.getElementById('year');
-const atElement = document.getElementById('at');
-const timeElement = document.getElementById('time');
+function moveEye() {
+  const iris = document.querySelector('.iris');
+  const pupil = document.querySelector('.pupil');
+  const glassEffect = document.querySelector('.glass-effect');
 
-const language = navigator.language.slice(0, 2);
+  const maxMove = 15;
+  const x = (Math.random() - 0.5) * maxMove;
+  const y = (Math.random() - 0.5) * maxMove;
 
-const phrases = {
-  en: {
-    mainTitle: 'I don\'t have anything to say.',
-    todayIs: 'Today is',
-    at: 'at',
-    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-    weekdays: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-  },
-  ru: {
-    mainTitle: 'Мне нечего сказать.',
-    todayIs: 'Сегодня',
-    at: '-',
-    months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-    weekdays: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
-  },
-};
+  const speed = Math.random() * 0.3 + 0.2;
 
-function updateDateTime() {
-  const currentDate = new Date();
-  const monthName = phrases[language].months[currentDate.getMonth()];
-  const dayOfWeek = phrases[language].weekdays[currentDate.getDay()];
-  let day = currentDate.getDate();
+  iris.style.transition = `transform ${speed}s ease-out`;
+  pupil.style.transition = `transform ${speed}s ease-out, r 0.3s ease-out`;
+  glassEffect.style.transition = `transform ${speed}s ease-out`;
 
-  // Auto-detect the time format
-  const timeFormat = new Intl.DateTimeFormat(language, {
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false,
-  });
-
-  mainTitleElement.textContent = phrases[language].mainTitle;
-  todayIsElement.textContent = phrases[language].todayIs;
-  dayOfWeekElement.textContent = dayOfWeek;
-  monthElement.textContent = monthName;
-  dayElement.textContent = day;
-  yearElement.textContent = currentDate.getFullYear();
-  atElement.textContent = phrases[language].at;
-  timeElement.textContent = timeFormat.format(currentDate);
+  iris.style.transform = `translate(${x}px, ${y}px)`;
+  pupil.style.transform = `translate(${x}px, ${y}px)`;
+  glassEffect.style.transform = `translate(${x}px, ${y}px)`;
 }
 
-updateDateTime();
-setInterval(updateDateTime, 1000);
+function changePupilSize() {
+  const pupil = document.querySelector('.pupil');
+  const minSize = 10;
+  const maxSize = 14;
+  const newSize = Math.random() * (maxSize - minSize) + minSize;
+
+  pupil.style.transition = 'r 0.3s ease-out';
+  pupil.setAttribute('r', newSize);
+}
+
+function blink() {
+  const eyelid = document.querySelector('.eyelid');
+  eyelid.style.transform = 'translateY(100%)';
+  setTimeout(() => {
+    eyelid.style.transform = 'translateY(-100%)';
+  }, 150);
+}
+
+function randomAction() {
+  const actions = [
+    { func: moveEye, weight: 0.7 },
+    { func: blink, weight: 0.2 },
+    { func: changePupilSize, weight: 0.1 }
+  ];
+
+  const totalWeight = actions.reduce((sum, action) => sum + action.weight, 0);
+  let random = Math.random() * totalWeight;
+
+  for (let action of actions) {
+    if (random < action.weight) {
+      action.func();
+      break;
+    }
+    random -= action.weight;
+  }
+
+  const minInterval = 500;
+  const maxInterval = 3000;
+  const interval = Math.random() * (maxInterval - minInterval) + minInterval;
+
+  setTimeout(randomAction, interval);
+}
+
+// Запускаем случайные действия
+randomAction();

@@ -1,27 +1,52 @@
-body {
-	background-color: #212121;
-	text-align: center;
-	height: 100vh;
-	margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #212121;
+    --text-color: #ffffff;
+    --accent-color: #888;
+    --gradient-1: #ff3d00;
+    --gradient-2: #00b0ff;
+    --gradient-3: #00e676;
+    --gradient-4: #ffd600;
+    --eye-color: var(--text-color); /* или любой другой цвет */
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a; /* Темный фон */
+    font-family: Arial, sans-serif;
 }
 
 .container {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: auto;
+    position: relative;
+    width: 140px;
+    height: 100px;
 }
 
-h1, p, span {
-	font-family: 'Roboto Slab', monospace;
+.eye {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-h1 {
-  color: #00ff6a;
-  font-size: 18pt;
+.eyelid {
+    transform: translateY(-100%);
+    transition: transform 0.15s ease-in-out;
 }
 
-p {
-  color: #797979;
+.iris, .pupil, .glass-effect {
+    transition: transform 0.3s ease-out;
+}
+
+.pupil {
+    transition: r 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.eye-shine {
+    mix-blend-mode: screen;
 }
